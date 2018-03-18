@@ -1,0 +1,87 @@
+commit 698b55b3226b27ded4278a6882b99adb412c0a0e
+Author: Rami <ramilejmi@gmail.com>
+Date:   Sun Mar 18 19:43:46 2018 +0200
+
+    muutoksia
+
+ tiedostoja/file2             | 0
+ tiedostoja/{file1 => file22} | 0
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+
+commit dcbda76f96ac1ce11276a021bb0ebc55a0f115b0
+Author: Rami <ramilejmi@gmail.com>
+Date:   Sun Mar 18 19:41:06 2018 +0200
+
+    3 fileä lisätty
+
+ tiedostoja/file1 | 0
+ tiedostoja/file2 | 0
+ tiedostoja/file3 | 0
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 68692c10b17ce85d4d212be3c1658b271fe37499
+Author: Rami <ramilejmi@gmail.com>
+Date:   Sun Mar 18 19:36:51 2018 +0200
+
+    Lisää muutoksia
+
+ eka.txt    | 2 +-
+ kolmas.txt | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+commit 6f5a73cbdc6cafaa950dbefdfaaba31afbc9ba82
+Author: Rami <ramilejmi@gmail.com>
+Date:   Sun Mar 18 19:35:19 2018 +0200
+
+    Uudelleen nimeäminen: tiedosto -> eka
+
+ tiedosto.txt => eka.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 860676f2e32e7a9480a763f76573f0d7d69b2f76
+Author: Rami <ramilejmi@gmail.com>
+Date:   Sun Mar 18 19:33:56 2018 +0200
+
+    Toinen poistettu
+
+ toinen.txt | 1 -
+ 1 file changed, 1 deletion(-)
+
+commit dd07617ae5ff8c037af27a0d27febb0497ca72d9
+Author: Rami <ramilejmi@gmail.com>
+Date:   Sun Mar 18 19:30:04 2018 +0200
+
+    Muutoksia
+
+ kolmas.txt     | 1 +
+ stuff/joku.txt | 0
+ toinen.txt     | 1 +
+ 3 files changed, 2 insertions(+)
+
+commit e1a6af1dcc3961f7935b2532eb158e62638c4a8d
+Author: Rami <ramilejmi@gmail.com>
+Date:   Sun Mar 18 19:28:16 2018 +0200
+
+    kolmas lisätty
+
+ kolmas.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 54e2a1bf016495cbef247997e4b44192030b88cc
+Author: Rami <ramilejmi@gmail.com>
+Date:   Sun Mar 18 19:25:24 2018 +0200
+
+    muutos ja lisäys
+
+ tiedosto.txt | 1 +
+ toinen.txt   | 0
+ 2 files changed, 1 insertion(+)
+
+commit 8c63c23ee6f82abef41764f9bc1f7b4548b25bf9
+Author: Rami <ramilejmi@gmail.com>
+Date:   Sun Mar 18 19:23:38 2018 +0200
+
+    tiedosto.txt luotu
+
+ tiedosto.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
