@@ -1,4 +1,4 @@
 **OTM Harjoitustyö**
 
-*Harjoitustyö kurssille *ohjelmistotekniikan menetelmät*
+Harjoitustyö kurssille *ohjelmistotekniikan menetelmät*
 
