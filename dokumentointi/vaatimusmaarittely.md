@@ -10,15 +10,15 @@ Pelaaja
 
 #### Suunnitellut toiminnallisuudet ##
 
--pelaamisikkuna ja tilastoikkuna (ja tilin luominen/kirjautuminen?)
+- pelaamisikkuna ja tilastoikkuna (ja tilin luominen/kirjautuminen?)
 
--tilastoikkunaan tulee lista kaikista tuloksista ja niihin liittyvistä pelaajista
+- tilastoikkunaan tulee lista kaikista tuloksista ja niihin liittyvistä pelaajista
 
--peli-ikkuna sisältää itse pelitoteutuksen lisäksi pistetilanteen
+- peli-ikkuna sisältää itse pelitoteutuksen lisäksi pistetilanteen
 
--pelin päättyessä voittoon avautuu voittoikkuna pistetilastoineen
+- pelin päättyessä voittoon avautuu voittoikkuna pistetilastoineen
 
--pelin päättyessä häviöön avautuu häviöikkuna pistetilastoineen
+- pelin päättyessä häviöön avautuu häviöikkuna pistetilastoineen
 
 
 #### Käyttöliittymäluonnos ##
