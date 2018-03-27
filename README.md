@@ -8,5 +8,5 @@ Harjoitustyö kurssille *ohjelmistotekniikan menetelmät* <br/> <br/>
 
 <br/><br/>
 
-[työaika](https://github.com/RamiBL/otm-harjoitustyo/blob/master/dokumentointi/tyoaikakirjanpito.md)
+[työaika](https://github.com/RamiBL/otm-harjoitustyo/blob/master/dokumentointi/tyoaikakirjanpito.md) <br/>
 [vaativuusmäärittely](https://github.com/RamiBL/otm-harjoitustyo/blob/master/dokumentointi/vaatimusmaarittely.md)
