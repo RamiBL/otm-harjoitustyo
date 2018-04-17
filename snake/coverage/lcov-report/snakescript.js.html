@@ -20,9 +20,9 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">10% </span>
+        <span class="strong">10.17% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>6/60</span>
+        <span class='fraction'>6/59</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">0% </span>
@@ -35,9 +35,9 @@
         <span class='fraction'>0/7</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">10.91% </span>
+        <span class="strong">11.11% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>6/55</span>
+        <span class='fraction'>6/54</span>
       </div>
     </div>
     <p class="quiet">
@@ -172,6 +172,9 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -181,9 +184,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -261,7 +261,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -290,21 +290,21 @@ let score;
 const speed = 130;
 const color = 'white';
 let tail;
+// Snake array
+let snakeArray;
+// Once the DOM is loaded:
 document.addEventListener('DOMContentLoaded', <span class="fstat-no" title="function not covered" >(e</span>vent) =&gt; {
   const canvas = <span class="cstat-no" title="statement not covered" >document.getElementById('canvas');</span>
   const ctx = <span class="cstat-no" title="statement not covered" >canvas.getContext('2d');</span>
   const w = <span class="cstat-no" title="statement not covered" >canvas.width;</span>
   const h = <span class="cstat-no" title="statement not covered" >canvas.height;</span>
-  
 &nbsp;
-  // Snake array
-  let snakeArray;
 &nbsp;
   // Create snake function
   function <span class="fstat-no" title="function not covered" >createSnake(</span>) {
     const length = <span class="cstat-no" title="statement not covered" >5;</span>
 <span class="cstat-no" title="statement not covered" >    snakeArray = [];</span>
-<span class="cstat-no" title="statement not covered" >    for (let i = length - 1; i &gt;= 0; i--) {</span>
+<span class="cstat-no" title="statement not covered" >    for (let i = length - 1; i &gt;= 0; i -= 1) {</span>
 <span class="cstat-no" title="statement not covered" >      snakeArray</span>
         .push({ x: i, y: 0 });
     }
@@ -313,8 +313,8 @@ document.addEventListener('DOMContentLoaded', <span class="fstat-no" title="func
   // Create food function
   function <span class="fstat-no" title="function not covered" >createFood(</span>) {
 <span class="cstat-no" title="statement not covered" >    food = {</span>
-      x: Math.round(Math.random() * (w - cw) / cw),
-      y: Math.round(Math.random() * (h - cw) / cw),
+      x: Math.round(Math.random() * ((w - cw) / cw)),
+      y: Math.round(Math.random() * ((h - cw) / cw)),
     };
   }
 &nbsp;
@@ -328,7 +328,7 @@ document.addEventListener('DOMContentLoaded', <span class="fstat-no" title="func
 &nbsp;
   // Function to check for collisions
   function <span class="fstat-no" title="function not covered" >checkCollision(</span>x, y, array) {
-<span class="cstat-no" title="statement not covered" >    for (let i = 0; i &lt; array.length; i++) {</span>
+<span class="cstat-no" title="statement not covered" >    for (let i = 0; i &lt; array.length; i += 1) {</span>
 <span class="cstat-no" title="statement not covered" >      if (array[i.x === x &amp;&amp; array[i].y === y]) {</span>
 <span class="cstat-no" title="statement not covered" >        return true;</span>
       }
@@ -372,14 +372,14 @@ document.addEventListener('DOMContentLoaded', <span class="fstat-no" title="func
     }
 <span class="cstat-no" title="statement not covered" >    snakeArray.unshift(tail);</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    for (let i = 0; i &lt; snakeArray.length; i++) {</span>
+<span class="cstat-no" title="statement not covered" >    for (let i = 0; i &lt; snakeArray.length; i += 1) {</span>
       const c = <span class="cstat-no" title="statement not covered" >snakeArray[i];</span>
 <span class="cstat-no" title="statement not covered" >      paintCell(c.x, c.y);</span>
     }
     // Paint the food
 <span class="cstat-no" title="statement not covered" >    paintCell(food.x, food.y);</span>
     // Check the score (againt the hiscore from local storage)
-<span class="cstat-no" title="statement not covered" >    checkscore(score);</span>
+    // checkScore(score);
   }
 &nbsp;
   // Initializer
@@ -395,10 +395,10 @@ document.addEventListener('DOMContentLoaded', <span class="fstat-no" title="func
 });
 &nbsp;
 module.exports = {
-    d: d,
-    color: color,
-    speed: speed,
-    cw: cw
+  d,
+  color,
+  speed,
+  cw,
 };
 &nbsp;</pre></td></tr>
 </table></pre>
@@ -406,7 +406,7 @@ module.exports = {
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Tue Apr 17 2018 23:52:03 GMT+0300 (EEST)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Wed Apr 18 2018 00:26:29 GMT+0300 (EEST)
 </div>
 </div>
 <script src="prettify.js"></script>
