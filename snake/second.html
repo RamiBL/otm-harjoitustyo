@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Snake</title>
+<link rel="stylesheet" href="snakestyle.css" type="text/css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+<body>
+    <!--USER INTERFACE-->
+    <div class="container">
+        <div id="overlay">
+            Your Final Score: <span id="final_score"></span>
+            <br>
+            <a onClick="window.location.reload()" href="#">Click to play again</a>
+        </div>
+        <canvas id="canvas" width="600" height="400"></canvas>
+        <div id="stats">
+            <div class="score"></div>
+            <div class="score"></div>
+            <button onclick="resetScore()" id="reset_score">Reset highscore</button>
+        </div>
+    </div>
+<!--Getting JQuery-->
+<!--
+<script>
+window.$ = window.jQuery = require("https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js");
+</script>
+-->
+<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>-->
+<!-- Getting snakescript.js javascript file-->
+<script src="snakescript.js"></script>
+</body>
+</html>
