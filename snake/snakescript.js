@@ -6,27 +6,21 @@ let score;
 const speed = 130;
 const color = 'white';
 let tail;
+// Snake array
+let snakeArray;
+// Once the DOM is loaded:
 document.addEventListener('DOMContentLoaded', (event) => {
   const canvas = document.getElementById('canvas');
   const ctx = canvas.getContext('2d');
   const w = canvas.width;
   const h = canvas.height;
-  //const cw = 15;
-  //const d = 'right';
-//   let food;
-//   let score;
-//   const speed = 130;
-//   const color = 'white';
-//   let tail;
 
-  // Snake array
-  let snakeArray;
 
   // Create snake function
   function createSnake() {
     const length = 5;
     snakeArray = [];
-    for (let i = length - 1; i >= 0; i--) {
+    for (let i = length - 1; i >= 0; i -= 1) {
       snakeArray
         .push({ x: i, y: 0 });
     }
@@ -35,8 +29,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
   // Create food function
   function createFood() {
     food = {
-      x: Math.round(Math.random() * (w - cw) / cw),
-      y: Math.round(Math.random() * (h - cw) / cw),
+      x: Math.round(Math.random() * ((w - cw) / cw)),
+      y: Math.round(Math.random() * ((h - cw) / cw)),
     };
   }
 
@@ -50,7 +44,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
   // Function to check for collisions
   function checkCollision(x, y, array) {
-    for (let i = 0; i < array.length; i++) {
+    for (let i = 0; i < array.length; i += 1) {
       if (array[i.x === x && array[i].y === y]) {
         return true;
       }
@@ -94,14 +88,14 @@ document.addEventListener('DOMContentLoaded', (event) => {
     }
     snakeArray.unshift(tail);
 
-    for (let i = 0; i < snakeArray.length; i++) {
+    for (let i = 0; i < snakeArray.length; i += 1) {
       const c = snakeArray[i];
       paintCell(c.x, c.y);
     }
     // Paint the food
     paintCell(food.x, food.y);
     // Check the score (againt the hiscore from local storage)
-    checkscore(score);
+    // checkScore(score);
   }
 
   // Initializer
@@ -117,8 +111,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
 });
 
 module.exports = {
-    d: d,
-    color: color,
-    speed: speed,
-    cw: cw
+  d,
+  color,
+  speed,
+  cw,
 };

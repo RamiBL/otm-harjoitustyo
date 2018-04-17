@@ -22,7 +22,7 @@ function createWindow() {
     slashes: true,
   }));
 
-  var x = "hey"
+  const x = 'hey';
   console.log(x);
   // Open the DevTools.
   // mainWindow.webContents.openDevTools()
