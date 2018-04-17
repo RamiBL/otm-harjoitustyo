@@ -2,7 +2,7 @@
 **Kieli: javascript** <br/>
 Harjoitustyö kurssille *ohjelmistotekniikan menetelmät* <br/> <br/>
 
-Klassinen snake peli, tällä hetkellä vain ei-toimiva login ikkuna ja yksi testi. Projektin saa pyörimään komennolla npm start juuresta.
+Klassinen snake peli, tällä hetkellä snake pyörii taustalla ja peli alkaa uudestaan automaattisesti sen osuttua seinään. Projektin saa pyörimään komennolla npm start juuresta.
 <br/><br/>
 Testit suoritetaan jestillä, ja se on konfiguroitu toimimaan komennolla (yarn) test. Lisäämällä komentoon --coverage saadaan myös kattavuusraportti. Testit löytyvät nyt \__tests__ kansiosta.
 
