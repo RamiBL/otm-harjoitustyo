@@ -9,32 +9,49 @@ let tail;
 // Snake array
 let snakeArray;
 
+// Create snake function
+function createSnake(x) {
+  const length = x;
+  const newArray = [];
+  for (let i = length - 1; i >= 0; i -= 1) {
+    newArray
+      .push({ x: i, y: 0 });
+  }
+  return newArray;
+}
+
+function hello() {
+  return 'hello';
+}
+
 // Making the snake respond to keyboard input
 document.addEventListener('keypress', (event) => {
-  switch(event.key){
-    case "a":
-      if(d === "right") break;
-      d = "left";
-      console.log("d=" + d);
+  switch (event.key) {
+    case 'a':
+      if (d === 'right') break;
+      d = 'left';
       break;
-    case "w":
-      if(d === "down") break;
-      d = "up";
-      console.log("go up");
+
+    case 'w':
+      if (d === 'down') break;
+      d = 'up';
       break;
-    case "d":
-      if(d === "left") break;
-      d = "right";
-      console.log("go right");
+
+    case 'd':
+      if (d === 'left') break;
+      d = 'right';
       break;
-    case "s":
-      if(d === "up") break;
-      d = "down";
-      console.log("go down");
+
+    case 's':
+      if (d === 'up') break;
+      d = 'down';
+      break;
+
+    default:
       break;
   }
-  //const keyName = event.key;
-  //console.log(keyName);
+  // const keyName = event.key;
+  // console.log(keyName);
 });
 // Once the DOM is loaded:
 document.addEventListener('DOMContentLoaded', (event) => {
@@ -45,14 +62,15 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
 
   // Create snake function
-  function createSnake() {
-    const length = 5;
-    snakeArray = [];
-    for (let i = length - 1; i >= 0; i -= 1) {
-      snakeArray
-        .push({ x: i, y: 0 });
-    }
-  }
+  // function createSnake() {
+  //   const length = 5;
+  //   snakeArray = [];
+  //   for (let i = length - 1; i >= 0; i -= 1) {
+  //     snakeArray
+  //       .push({ x: i, y: 0 });
+  //   }
+  // }
+
 
   // Create food function
   function createFood() {
@@ -79,6 +97,18 @@ document.addEventListener('DOMContentLoaded', (event) => {
     } return false;
   }
 
+  // Initializer
+  function init() {
+    document.getElementById('overlay').style.display = 'none';
+    document.getElementById('highscore').innerHTML = score;
+    d = 'right';
+    snakeArray = createSnake(5);
+    createFood();
+    score = 0;
+    if (typeof game_loop !== 'undefined') clearInterval(game_loop);
+    game_loop = setInterval(paint, speed);
+  }
+
   // Paint snake
   function paint() {
     // Paint the canvas
@@ -99,17 +129,17 @@ document.addEventListener('DOMContentLoaded', (event) => {
     if (nx === -1 || nx === w / cw ||
         ny === -1 || ny === h / cw ||
         checkCollision(nx, ny, snakeArray)) {
-      //alert(score);
-      //document.getElementById("overlay").style.display = "block";
-      if(document.getElementById("highscore") < score) {
-          document.getElementById("highscore").innerHTML = score;
+      // alert(score);
+      // document.getElementById("overlay").style.display = "block";
+      if (document.getElementById('highscore') < score) {
+        document.getElementById('highscore').innerHTML = score;
       }
-      
+
       init();
       return;
     }
-    document.getElementById("score").innerHTML = score;
-    //document.getElementById("highscore").innerHTML = score;
+    document.getElementById('score').innerHTML = score;
+    // document.getElementById("highscore").innerHTML = score;
     // Food
     if (nx === food.x && ny === food.y) {
       tail = { x: nx, y: ny };
@@ -133,17 +163,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
     // checkScore(score);
   }
 
-  // Initializer
-  function init() {
-    document.getElementById("overlay").style.display = "none";
-    document.getElementById("highscore").innerHTML = score;
-    d = "right";
-    createSnake();
-    createFood();
-    score = 0;
-    if (typeof game_loop !== 'undefined') clearInterval(game_loop);
-    game_loop = setInterval(paint, speed);
-  }
 
   init();
 });
@@ -153,4 +172,7 @@ module.exports = {
   color,
   speed,
   cw,
+  snakeArray,
+  createSnake,
+  hello,
 };
