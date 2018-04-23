@@ -1,13 +1,41 @@
 // import { create } from "domain";
-const cw = 15;
-const d = 'right';
+const cw = 10;
+let d = 'right';
 let food;
-let score;
-const speed = 130;
+let score = 0;
+const speed = 50;
 const color = 'white';
 let tail;
 // Snake array
 let snakeArray;
+
+// Making the snake respond to keyboard input
+document.addEventListener('keypress', (event) => {
+  switch(event.key){
+    case "a":
+      if(d === "right") break;
+      d = "left";
+      console.log("d=" + d);
+      break;
+    case "w":
+      if(d === "down") break;
+      d = "up";
+      console.log("go up");
+      break;
+    case "d":
+      if(d === "left") break;
+      d = "right";
+      console.log("go right");
+      break;
+    case "s":
+      if(d === "up") break;
+      d = "down";
+      console.log("go down");
+      break;
+  }
+  //const keyName = event.key;
+  //console.log(keyName);
+});
 // Once the DOM is loaded:
 document.addEventListener('DOMContentLoaded', (event) => {
   const canvas = document.getElementById('canvas');
@@ -45,7 +73,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
   // Function to check for collisions
   function checkCollision(x, y, array) {
     for (let i = 0; i < array.length; i += 1) {
-      if (array[i.x === x && array[i].y === y]) {
+      if (array[i].x === x && array[i].y === y) {
         return true;
       }
     } return false;
@@ -71,10 +99,17 @@ document.addEventListener('DOMContentLoaded', (event) => {
     if (nx === -1 || nx === w / cw ||
         ny === -1 || ny === h / cw ||
         checkCollision(nx, ny, snakeArray)) {
+      //alert(score);
+      //document.getElementById("overlay").style.display = "block";
+      if(document.getElementById("highscore") < score) {
+          document.getElementById("highscore").innerHTML = score;
+      }
+      
       init();
       return;
     }
-
+    document.getElementById("score").innerHTML = score;
+    //document.getElementById("highscore").innerHTML = score;
     // Food
     if (nx === food.x && ny === food.y) {
       tail = { x: nx, y: ny };
@@ -100,6 +135,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
   // Initializer
   function init() {
+    document.getElementById("overlay").style.display = "none";
+    document.getElementById("highscore").innerHTML = score;
+    d = "right";
     createSnake();
     createFood();
     score = 0;
