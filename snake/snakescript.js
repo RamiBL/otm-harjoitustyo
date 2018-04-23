@@ -20,6 +20,15 @@ function createSnake(x) {
   return newArray;
 }
 
+// Function to check for collisions
+function checkCollision(x, y, array) {
+  for (let i = 0; i < array.length; i += 1) {
+    if (array[i].x === x && array[i].y === y) {
+      return true;
+    }
+  } return false;
+}
+
 function hello() {
   return 'hello';
 }
@@ -50,16 +59,14 @@ document.addEventListener('keypress', (event) => {
     default:
       break;
   }
-  // const keyName = event.key;
-  // console.log(keyName);
 });
+
 // Once the DOM is loaded:
 document.addEventListener('DOMContentLoaded', (event) => {
   const canvas = document.getElementById('canvas');
   const ctx = canvas.getContext('2d');
   const w = canvas.width;
   const h = canvas.height;
-
 
   // Create snake function
   // function createSnake() {
@@ -70,7 +77,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
   //       .push({ x: i, y: 0 });
   //   }
   // }
-
 
   // Create food function
   function createFood() {
@@ -89,13 +95,13 @@ document.addEventListener('DOMContentLoaded', (event) => {
   }
 
   // Function to check for collisions
-  function checkCollision(x, y, array) {
-    for (let i = 0; i < array.length; i += 1) {
-      if (array[i].x === x && array[i].y === y) {
-        return true;
-      }
-    } return false;
-  }
+  // function checkCollision(x, y, array) {
+  //   for (let i = 0; i < array.length; i += 1) {
+  //     if (array[i].x === x && array[i].y === y) {
+  //       return true;
+  //     }
+  //   } return false;
+  // }
 
   // Initializer
   function init() {
@@ -175,4 +181,5 @@ module.exports = {
   snakeArray,
   createSnake,
   hello,
+  checkCollision
 };

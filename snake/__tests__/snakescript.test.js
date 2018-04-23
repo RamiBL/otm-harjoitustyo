@@ -42,5 +42,14 @@ describe('createSnake', () => {
   })
 })
 
+// Testing the collision function
+describe('checkCollision', () => {
+  it('should be an array', () => {
+    expect(snakescript.checkCollision).toBeDefined();
+    expect(snakescript.checkCollision(0, 1, {x: 0, y: 0})).toBeTruthy;
+    expect(snakescript.checkCollision(0, 1, {x: 1, y: 2})).toBeFalsy;
+  })
+})
+
 
 
