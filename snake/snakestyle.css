@@ -46,7 +46,9 @@ canvas {
     padding: 10px;
     float: right;
 }
-
+#stats {
+    display: none;
+}
 #overlay {
    display: none;
    color: white;
