@@ -1,4 +1,4 @@
 # snake
 
 
-Typical snake game. No functionality yet!
+Typical snake game. Starts again automatically after death.
