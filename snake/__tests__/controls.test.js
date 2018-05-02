@@ -22,3 +22,9 @@ const a = {key: 'a'};
       expect(controls.onKeyPress(s, 'up')).toBe('up');
     })
   })
+
+  describe('onKeyPress', () => {
+    it('should change return value', () => {
+      expect(controls.onKeyPress(a, 'down')).toBe('left');
+    })
+  })

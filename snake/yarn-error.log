@@ -1,5 +1,5 @@
 Arguments: 
-  /usr/local/Cellar/node/9.8.0/bin/node /usr/local/Cellar/yarn/1.5.1_1/libexec/bin/yarn.js test
+  /usr/local/Cellar/node/9.8.0/bin/node /usr/local/Cellar/yarn/1.5.1_1/libexec/bin/yarn.js test -coverage
 
 PATH: 
   /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Applications/Wireshark.app/Contents/MacOS
@@ -21,7 +21,9 @@ npm manifest:
     "main": "main.js",
     "scripts": {
       "start": "electron .",
-      "test": "jest"
+      "test": "jest",
+      "package": "",
+      "build": "electron-packager . snake"
     },
     "repository": "https://github.com/electron/electron-quick-start",
     "keywords": [
@@ -34,7 +36,9 @@ npm manifest:
     "author": "GitHub",
     "license": "CC0-1.0",
     "devDependencies": {
+      "asar": "^0.14.3",
       "electron": "^1.8.4",
+      "electron-packager": "^12.0.1",
       "eslint": "^4.19.1",
       "eslint-config-airbnb-base": "^12.1.0",
       "eslint-config-google": "^0.9.1",
@@ -3550,7 +3554,7 @@ Trace:
   Error: Command failed.
   Exit code: 1
   Command: sh
-  Arguments: -c jest
+  Arguments: -c jest -coverage
   Directory: /Users/uni/otm-harjoitustyo/snake
   Output:
   
