@@ -1,6 +1,8 @@
 /* eslint no-undef: 0 */ // --> OFF
 
-// Create snake function
+/** Creates a snake
+ * @param {integer} x length of the snake
+ */
 function createSnake(x) {
   const length = x;
   const newArray = [];
@@ -11,7 +13,11 @@ function createSnake(x) {
   return newArray;
 }
 
-// Checking for a collision
+/** This is a function to check for collisions
+ * @param {integer} x x coordinate
+ * @param {integer} y y coordinate
+ * @param {array} array 
+ */
 function checkCollision(x, y, array) {
   for (let i = 0; i < array.length; i += 1) {
     if (array[i].x === x && array[i].y === y) {
@@ -20,63 +26,9 @@ function checkCollision(x, y, array) {
   } return false;
 }
 
-// function onKeyPress(event, d) {
-//   switch (event.key) {
-//     case 'a':
-//       if (d === 'right') return d;
-//       return 'left';
-
-//     case 'w':
-//       if (d === 'down') return d;
-//       return 'up';
-
-//     case 'd':
-//       if (d === 'left') return d;
-//       return 'right';
-
-//     case 's':
-//       if (d === 'up') return d;
-//       return 'down';
-
-//     default:
-//       return d;
-//   }
-// }
-
-
-// Controls
-/*
-function onKeyPress(event) {
-  switch (event.key) {
-    case 'a':
-      if (d === 'right') break;
-      d = 'left';
-      break;
-
-    case 'w':
-      if (d === 'down') break;
-      d = 'up';
-      break;
-
-    case 'd':
-      if (d === 'left') break;
-      d = 'right';
-      break;
-
-    case 's':
-      if (d === 'up') break;
-      d = 'down';
-      break;
-
-    default:
-      break;
-  }
-}
-*/
 
 module.exports = {
   createSnake,
-  checkCollision,
-  // onKeyPress
+  checkCollision
 };
 
