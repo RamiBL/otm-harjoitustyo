@@ -10,4 +10,6 @@ ma 9.4   | 5 | viikko3: laskarit | kotona
 ti 10.4  | 4 | viikko3: laskarit, harjoitustyö | kotona
 ma 16.4  | 4 | viikko4: harjoitustyö | kotona
 ti 17.4  | 4 | viikko4: harjoitustyö | kotona
+ti 24.4  | 4 | viikko5: harjoitustyö | kotona
+ke 02.5  | 4 | viikko6: harjoitustyö | kotona
 
