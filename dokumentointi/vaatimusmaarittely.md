@@ -5,10 +5,12 @@
 Snake peli, jossa liikutetaan matoa ja yritetään syödä kenttään ilmestyviä ruokapaloja ilman että törmää mihinkään. Paloista saa pisteitä ja mato kasvaa. Peli loppuu törmäykseen, jolloin aukeaa uusi ikkuna (joskin hitaasti), josta pelaaja voi valita jatkavansa pelaamista aloittamalla uudestaan, tai katsomalla pisteitään.
 
 #### Käyttäjät ##
+----------------
 
-Pelaaja
+- vain yksi pelaaja, ei mahdollisuutta liittää tiliä tai nimeä peliin
 
 #### Toiminnallisuudet ##
+-------------------------
 
 - menu, pelaamisikkuna ja tilastoikkuna 
 
@@ -22,6 +24,7 @@ Pelaaja
 
 
 #### Käyttöliittymäluonnos ##
+-----------------------------
 
 Sovellus koostuu kolmesta eri näkymästä. 
 
@@ -39,6 +42,7 @@ Tilasto-ikkuna:
 
 
 #### Jatkokehitysideoita ##
+--------------------------
 
 - Käyttäjän luominen
 - Käyttäjän luomisen jälkeen tietokantaan voidaan liittää sekä score, että käyttäjä
