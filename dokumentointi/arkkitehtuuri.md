@@ -35,7 +35,7 @@ scores.db sisältää yhden pöydän, joka sisältää integerejä (score). Aina
 **Ohjelman rakenteeseen jääneet heikkoudet**
 --------------------------------------------
 
-- Jostain syystä (saa ehdottaa syitä!) en saanut yhtä diviä esille enää pelin koodauksen loppuvaiheissa, josta syystä käyttöliittymä jäi aika yksinkertaiseksi. Oli tarkoitus, että pelin päättyessä esitetään viesti pelin päättymisestä, ja että pelaaja voisi valita pelaavansa uudelleen, tai katsovansa kaikkia scoreja (johon löytyy funktio [getAll()](https://github.com/RamiBL/otm-harjoitustyo/blob/master/snake/db/readdata.js).
+- Jostain syystä (saa ehdottaa syitä!) en saanut yhtä diviä esille enää pelin koodauksen loppuvaiheissa, josta syystä käyttöliittymä jäi aika yksinkertaiseksi. Oli tarkoitus, että pelin päättyessä esitetään viesti pelin päättymisestä, ja että pelaaja voisi valita pelaavansa uudelleen, tai katsovansa kaikkia scoreja johon löytyy funktio [getAll](https://github.com/RamiBL/otm-harjoitustyo/blob/master/snake/db/readdata.js).
 Toki jonkinlainen ikkuna samoilla vaihtoehdoilla voisi esiintyä jo alussa, jolloin peli ei alkaisi heti sovelluksen avauduttua.
 
 - Myöskin [snakescript.js](https://github.com/RamiBL/otm-harjoitustyo/blob/master/snake/ui/snakescript.js)-tiedostoa voisi vielä yksinkertaistaa, ja ehkä eriyttää vielä joitain funktioita sen sisältä muualle.
