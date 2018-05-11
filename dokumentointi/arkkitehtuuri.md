@@ -42,4 +42,4 @@ Toki jonkinlainen ikkuna samoilla vaihtoehdoilla voisi esiintyä jo alussa, joll
 
 - Luulisin, että async toiminnallisuus tietokantaoperaatioissa hidastaa välillä pelin alkua. 
 
-- Tietokannan saa laitettua lukkoon kuolemalla tarkoituksenmukaisesti monta kertaa putkeen. Tämä ei kaada peliä, eikä muutenkaan vaikuta pelikokemukseen mitenkään, mutta consoliin tulee virheilmoitus.
+- Tietokannan saa laitettua lukkoon kuolemalla tarkoituksenmukaisesti (kaipa sama ongelma ilmenee vaikka kuolisikin vahingossa) monta kertaa putkeen. Tämä ei kaada peliä, eikä muutenkaan vaikuta pelikokemukseen mitenkään, mutta consoliin tulee virheilmoitus.
