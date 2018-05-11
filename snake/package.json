@@ -7,7 +7,9 @@
     "start": "electron .",
     "test": "jest",
     "package": "",
-    "build": "electron-packager . snake"
+    "build": "electron-packager . snake",
+    "rebuild": "electron-rebuild -f -w sqlite3",
+    "build-sqlite3": "export PATH=/usr/bin:$PATH && cd node_modules/sqlite3 && node-gyp configure --module_name=node_sqlite3 --module_path=../lib/binding/electron-v1.4-darwin-x64 && node-gyp rebuild --target=1.4.15 --arch=x64 --target_platform=darwin --dist-url=https://atom.io/download/electron --module_name=node_sqlite3 --module_path=../lib/binding/electron-v1.4-darwin-x64"
   },
   "repository": "https://github.com/electron/electron-quick-start",
   "keywords": [
@@ -23,10 +25,16 @@
     "asar": "^0.14.3",
     "electron": "^1.8.4",
     "electron-packager": "^12.0.1",
+    "electron-rebuild": "^1.7.3",
     "eslint": "^4.19.1",
     "eslint-config-airbnb-base": "^12.1.0",
     "eslint-config-google": "^0.9.1",
     "eslint-plugin-import": "^2.11.0",
-    "jest": "^22.4.3"
+    "jest": "^22.4.3",
+    "sqlite3": "^4.0.0"
+  },
+  "dependencies": {
+    "mysql": "^2.15.0",
+    "pouchdb": "^6.4.3"
   }
 }

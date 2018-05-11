@@ -7,6 +7,7 @@
  */
 function onKeyPress(event, d) {
   switch (event.key) {
+    
     case 'a':
       if (d === 'right') return d;
       return 'left';

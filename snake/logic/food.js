@@ -9,6 +9,7 @@
 function xPosition(width, height, size) {
   return Math.round(Math.random() * ((width - size) / size));
 }
+
 /** Returns a random y position within the canvas,
  * that follows the constraints given as parameters
  * @param {Integer} width The width of the acceptable area
@@ -18,6 +19,7 @@ function xPosition(width, height, size) {
 function yPosition(width, height, size) {
   return Math.round(Math.random() * ((height - size) / size));
 }
+
 /** Creates a food pellet within the parameteres 
  * @param {Integer} width
  * @param {Integer} height
