@@ -17,5 +17,6 @@ Kontrollit: a - vasen,  d - oikea,  w - ylös,  s - alas
 [vaatimuusmäärittely](https://github.com/RamiBL/otm-harjoitustyo/blob/master/dokumentointi/vaatimusmaarittely.md) <br/>
 [työaikakirjanpito](https://github.com/RamiBL/otm-harjoitustyo/blob/master/dokumentointi/tyoaikakirjanpito.md) <br>
 [dokumentointi](https://github.com/RamiBL/otm-harjoitustyo/tree/master/dokumentointi)
+[arkkitehtuuri](https://github.com/RamiBL/otm-harjoitustyo/blob/master/dokumentointi/arkkitehtuuri.md)
 
 
