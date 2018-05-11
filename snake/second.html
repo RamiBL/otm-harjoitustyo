@@ -4,24 +4,15 @@
 <title>Snake</title>
 <link rel="stylesheet" href="snakestyle.css" type="text/css">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
 </head>
 <body>
-    <!--USER INTERFACE-->
     <div class="container">
-        <div id="overlay">
-            Your Final Score: <span id="final_score"></span>
-            <br>
-            <a onClick="window.location.reload()" href="#">Click to play again</a>
-        </div>
         <canvas id="canvas" width="600" height="450"></canvas>
         <div id="stats">
             <div id="score"></div>
             <div id="highscore"></div>
-          <!--  <button onclick="resetScore()" id="reset_score">Reset highscore</button> -->
         </div>
     </div>
-<!-- Getting snakescript.js javascript file-->
 <script src="ui/snakescript.js"></script>
 </body>
 </html>

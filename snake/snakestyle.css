@@ -52,7 +52,7 @@ canvas {
 
 
 #overlay {
-   display: block;
+   display: hidden;
    color: white;
    background: orange;
    font-size: 100px;

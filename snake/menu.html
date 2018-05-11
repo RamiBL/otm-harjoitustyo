@@ -1,0 +1,40 @@
+<!Doctype html>
+<html>
+<style>
+.btn-group button {
+    background-color: #4CAF50; /* Green background */
+    border: 1px solid green; /* Green border */
+    color: white; /* White text */
+    padding: 50px 50px; /* Some padding */
+    cursor: pointer; /* Pointer/hand icon */
+    float: center; 
+}
+
+
+.btn-group:after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.btn-group button:hover {
+    background-color: #3e8e41;
+}
+
+</style>
+<body style="background-color:gray;">
+<div style="text-align:center;color:pink;">
+        <h1>Snake</h1>
+        <p>You can either choose to play, or check your scores!</p>
+</div>
+
+
+
+<div class="btn-group" style="width:100%;height:100%">
+  <button onclick="window.location.href='second.html'" style="width:100%;height:100%">Play!</button>
+  <button onclick="window.location.href='scores.html'" style="width:100%">Scores</button>
+</div>
+
+
+</body>
+</html>

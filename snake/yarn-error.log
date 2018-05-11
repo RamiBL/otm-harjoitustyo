@@ -1,5 +1,5 @@
 Arguments: 
-  /usr/local/Cellar/node/9.8.0/bin/node /usr/local/Cellar/yarn/1.5.1_1/libexec/bin/yarn.js test --coverage
+  /usr/local/bin/node /usr/local/Cellar/yarn/1.5.1_1/libexec/bin/yarn.js test
 
 PATH: 
   /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Applications/Wireshark.app/Contents/MacOS
@@ -8,7 +8,7 @@ Yarn version:
   1.5.1
 
 Node version: 
-  9.8.0
+  8.11.1
 
 Platform: 
   darwin x64
@@ -23,7 +23,9 @@ npm manifest:
       "start": "electron .",
       "test": "jest",
       "package": "",
-      "build": "electron-packager . snake"
+      "build": "electron-packager . snake",
+      "rebuild": "electron-rebuild -f -w sqlite3",
+      "build-sqlite3": "export PATH=/usr/bin:$PATH && cd node_modules/sqlite3 && node-gyp configure --module_name=node_sqlite3 --module_path=../lib/binding/electron-v1.4-darwin-x64 && node-gyp rebuild --target=1.4.15 --arch=x64 --target_platform=darwin --dist-url=https://atom.io/download/electron --module_name=node_sqlite3 --module_path=../lib/binding/electron-v1.4-darwin-x64"
     },
     "repository": "https://github.com/electron/electron-quick-start",
     "keywords": [
@@ -39,11 +41,17 @@ npm manifest:
       "asar": "^0.14.3",
       "electron": "^1.8.4",
       "electron-packager": "^12.0.1",
+      "electron-rebuild": "^1.7.3",
       "eslint": "^4.19.1",
       "eslint-config-airbnb-base": "^12.1.0",
       "eslint-config-google": "^0.9.1",
       "eslint-plugin-import": "^2.11.0",
-      "jest": "^22.4.3"
+      "jest": "^22.4.3",
+      "sqlite3": "^4.0.0"
+    },
+    "dependencies": {
+      "mysql": "^2.15.0",
+      "pouchdb": "^6.4.3"
     }
   }
 
@@ -3554,13 +3562,14 @@ Trace:
   Error: Command failed.
   Exit code: 1
   Command: sh
-  Arguments: -c jest --coverage
+  Arguments: -c jest
   Directory: /Users/uni/otm-harjoitustyo/snake
   Output:
   
       at ProcessTermError.MessageError (/usr/local/Cellar/yarn/1.5.1_1/libexec/lib/cli.js:186:110)
       at new ProcessTermError (/usr/local/Cellar/yarn/1.5.1_1/libexec/lib/cli.js:226:113)
       at ChildProcess.<anonymous> (/usr/local/Cellar/yarn/1.5.1_1/libexec/lib/cli.js:30281:17)
-      at ChildProcess.emit (events.js:180:13)
-      at maybeClose (internal/child_process.js:936:16)
-      at Process.ChildProcess._handle.onexit (internal/child_process.js:220:5)
+      at emitTwo (events.js:126:13)
+      at ChildProcess.emit (events.js:214:7)
+      at maybeClose (internal/child_process.js:925:16)
+      at Process.ChildProcess._handle.onexit (internal/child_process.js:209:5)

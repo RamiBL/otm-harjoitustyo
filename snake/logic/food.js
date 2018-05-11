@@ -20,10 +20,10 @@ function yPosition(width, height, size) {
   return Math.round(Math.random() * ((height - size) / size));
 }
 
-/** Creates a food pellet within the parameteres 
+/** Creates a food pellet within the parameteres
  * @param {Integer} width
  * @param {Integer} height
- * @param {Integer} size 
+ * @param {Integer} size
  */
 function createFood(width, height, size) {
   food = {

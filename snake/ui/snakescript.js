@@ -1,5 +1,5 @@
 /* eslint-disable no-undef, camelcase,
-no-restricted-globals, no-unused-vars, no-use-before-define */ // --> OFF
+no-restricted-globals, no-unused-vars, no-use-before-define , import/no-unresolved */ // --> OFF
 
 const snake = require('./logic/snake.js');
 const foodFunctions = require('./logic/food.js');
@@ -7,7 +7,7 @@ const controls = require('./logic/controls.js');
 const write = require('./db/writedata.js');
 const read = require('./db/readdata.js');
 const sqlite3 = require('sqlite3').verbose();
-// Declaring constants and variables
+
 const size = 10;
 let direction = 'right';
 let food;
@@ -24,49 +24,12 @@ document.addEventListener('keypress', () => {
 });
 
 
-// Once the DOM is loaded:
 document.addEventListener('DOMContentLoaded', (event) => {
   const canvas = document.getElementById('canvas');
   const ctx = canvas.getContext('2d');
   const w = canvas.width;
   const h = canvas.height;
 
-  //OMAA
-//   var db = new sqlite3.Database('test.db', (err) => {
-//     if (err) {
-//       return console.error(err.message);
-//     }
-//     console.log('Connected to the test.db SQlite database.');
-// }   );
-//     db.run('CREATE TABLE if not exists scorestest(score integer)');
-
-    
-// function heye() {
-//       let sql = `SELECT MAX(score) FROM scorestest`;
-//       let x;
-//       db.all(sql, [], (err, rows) => {
-//           if (err) {
-//               throw err;
-//           }
-//           rows.forEach((row) => {
-//           callback(row);
-//           });
-//       });
-//       function callback(row) {
-//           console.log('Getting highest score..')
-//           //console.log(row['MAX(score)']);
-//           console.log(row);
-//           x = row;
-//           highscore = x['MAX(score)'];
-//           console.log(highscore);
-//           console.log('uusi funktio tässä')
-//       }
-     
-//       }
-  //OMAA
-
-
-  // Paint cell function
   function paintCell(x, y) {
     ctx.fillStyle = color;
     ctx.fillRect(x * size, y * size, size, size);
@@ -74,12 +37,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
     ctx.strokeRect(x * size, y * size, size, size);
   }
 
-
-  // Initializer
   function init() {
-    document.getElementById('overlay').style.display = 'none';
-    //document.getElementById('highscore').innerHTML = highscore;
-    read.getMax().then(function(result) {
+    read.getMax().then((result) => {
       document.getElementById('highscore').innerHTML = result;
     });
     direction = 'right';
@@ -90,9 +49,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
     game_loop = setInterval(paint, speed);
   }
 
-  // Paint snake
   function paint() {
-    // Paint the canvas
+
     ctx.fillStyle = 'black';
     ctx.fillRect(0, 0, w, h);
     ctx.strokeStyle = 'white';
@@ -106,41 +64,21 @@ document.addEventListener('DOMContentLoaded', (event) => {
     else if (direction === 'up') ny -= 1;
     else if (direction === 'down') ny += 1;
 
-  
 
-    // Collision check
-    if (snake.snakeCollides(nx, ny, w, h, size)) {             
-      // if (document.getElementById('highscore') < score) {
-      //   document.getElementById('highscore').innerHTML = score;
-
-      // }
-      // if(score > highscore) {
-      //   highscore = score;
-      // };
-      document.getElementById('overlay').style.visibility = 'block';
-      write.insert(score).then(read.getMax().then(function(result) {
+    if (snake.snakeCollides(nx, ny, w, h, size)) { 
+      write.insert(score).then(read.getMax().then((result) => {
         highscore = result;
         document.getElementById('highscore').innerHTML = highscore;
       }));
-      
-     
-      // read.getMax().then(function(result) {
-      //   highscore = result;
-      //   document.getElementById('highscore').innerHTML = highscore;
-      // });
-      //console.log(highscore);
-      //document.getElementById('highscore').innerHTML = highscore;
-
-      init();
+      window.location.href = 'menu.html';
       return;
     }
+    
     document.getElementById('score').innerHTML = score;
-    // document.getElementById("highscore").innerHTML = score;
-    // Food
+ 
     if (nx === food.x && ny === food.y) {
       tail = { x: nx, y: ny };
       score += 1;
-      // We have to create a new "food"
       foodFunctions.createFood(w, h, size);
     } else {
       tail = snakeArray.pop();
@@ -154,7 +92,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
       paintCell(c.x, c.y);
     }
 
-    // Paint the food
     paintCell(food.x, food.y);
   }
 
