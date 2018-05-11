@@ -10,12 +10,12 @@ let db;
  * a table if one does not already exist.
  */
 function init() {
-  db = new sqlite3.Database('test.db', (err) => {
+  db = new sqlite3.Database('scores.db', (err) => {
     if (err) {
       return err.message;
     }
   });
-  db.run('CREATE TABLE if not exists scorestest(score integer)');
+  db.run('CREATE TABLE if not exists scores(score integer)');
 }
 
 /**
@@ -24,7 +24,7 @@ function init() {
  */
 function getMax() {
   init();
-  const sql = 'SELECT MAX(score) FROM scorestest';
+  const sql = 'SELECT MAX(score) FROM scores';
   return new Promise(((resolve, reject) => {
     db.all(sql, [], (err, rows) => {
       if (err) {
@@ -43,7 +43,8 @@ function getMax() {
  */
 function myCreateFunction() {
   init();
-  const sql = 'SELECT * FROM scorestest ORDER BY score';
+  array = [];
+  const sql = 'SELECT * FROM scores ORDER BY score';
   const table = document.getElementById('scoretable');
   db.all(sql, [], (err, rows) => {
     if (err) {
@@ -53,12 +54,16 @@ function myCreateFunction() {
       callback(row);
     });
   });
+  
   function callback(something) {
+    if(!array.includes(something.score)){
+    array.push(something.score);
     const row = table.insertRow(0);
     const cell1 = row.insertCell(0);
     const cell2 = row.insertCell(1);
     cell1.innerHTML = 'Score: ';
     cell2.innerHTML = something.score;
+    }
   }
 }
 

@@ -11,9 +11,16 @@ describe('createSnake', () => {
 });
 
 describe('checkCollision', () => {
-  it('should be an array', () => {
+  it('should be truthy, then falsy', () => {
     expect(snake.checkCollision).toBeDefined();
     expect(snake.checkCollision(0, 1, { a: 0, y: 0 })).toBeTruthy;
     expect(snake.checkCollision(0, 1, { a: 1, y: 2 })).toBeFalsy;
+  });
+});
+
+describe('checkCollision', () => {
+  it('', () => {
+    expect(snake.snakeCollides).toBeDefined();
+    expect(snake.snakeCollides(-1, 1, 1, 10, 1)).toBeTruthy;
   });
 });

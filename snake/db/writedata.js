@@ -8,12 +8,12 @@ let db;
  * if it doesn't already exist.
  */
 function init() {
-  db = new sqlite3.Database('test.db', (err) => {
+  db = new sqlite3.Database('scores.db', (err) => {
     if (err) {
       return err.message;
     }
   });
-  db.run('CREATE TABLE if not exists scorestest(score integer)');
+  db.run('CREATE TABLE if not exists scores(score integer)');
 }
 /**
  * Inserts the given number into the sql database.
@@ -22,7 +22,7 @@ function init() {
 function insert(number) {
   init();
   return new Promise(((resolve, reject) => {
-    db.run('INSERT INTO scorestest(score) VALUES(?)', [number], (err) => {
+    db.run('INSERT INTO scores(score) VALUES(?)', [number], (err) => {
       if (err) {
         return err.message;
       }
