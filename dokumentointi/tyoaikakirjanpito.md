@@ -12,4 +12,6 @@ ma 16.4  | 4 | viikko4: harjoitustyö | kotona
 ti 17.4  | 4 | viikko4: harjoitustyö | kotona
 ti 24.4  | 4 | viikko5: harjoitustyö | kotona
 ke 02.5  | 4 | viikko6: harjoitustyö | kotona
-
+ke 09.05 | 4 | harjoitustyö | kotona
+to 10.05 | 5 | harjoitustyö | kotona
+pe 11.05 | 6 | harjoitustyö | kotona
